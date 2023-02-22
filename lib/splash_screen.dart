@@ -1,7 +1,7 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:sp_multirolebase/home_page.dart';
+import 'package:sp_multirolebase/login_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     print('Program Asche');
     Timer(Duration(seconds: 3), () {
       Navigator.push(context,
-          MaterialPageRoute(builder: (context) => HomePage())
+          MaterialPageRoute(builder: (context) => LoginPage())
       );
     });
   }
