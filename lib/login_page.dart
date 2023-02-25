@@ -31,6 +31,10 @@ class _LoginPageState extends State<LoginPage> {
                   print(sp.getString('name'));
                   print(sp.getInt('age').toString());
                   print(sp.getBool('isLogin').toString());
+                  
+                  sp.remove('name');
+                  print(sp.getString('name'));
+
 
                   },
                 child: Container(
