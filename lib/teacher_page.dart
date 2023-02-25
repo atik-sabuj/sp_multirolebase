@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'login_page.dart';
+import 'package:sp_multirolebase/login_page.dart';
 
-class StudentPage extends StatefulWidget {
-  const StudentPage({Key? key}) : super(key: key);
+class TeacherPage extends StatefulWidget {
+  const TeacherPage({Key? key}) : super(key: key);
 
   @override
-  State<StudentPage> createState() => _StudentPageState();
+  State<TeacherPage> createState() => _TeacherPageState();
 }
 
-class _StudentPageState extends State<StudentPage> {
+class _TeacherPageState extends State<TeacherPage> {
   String email = '', age = '', type = '';
   @override
   void initState() {
@@ -31,7 +31,7 @@ class _StudentPageState extends State<StudentPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Student Page'),
+        title: Text('Teacher Page'),
         centerTitle: true,
         automaticallyImplyLeading: false,
       ),
@@ -41,7 +41,7 @@ class _StudentPageState extends State<StudentPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text('Student Screen'),
+            Text('Teacher Screen'),
             SizedBox(height: 50,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sp_multirolebase/home_page.dart';
+import 'package:sp_multirolebase/student_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -58,10 +59,21 @@ class _LoginPageState extends State<LoginPage> {
                   sp.setString('age', ageController.text.toString());
 
                   //admin, student, teacher
-                  sp.setString('userType', 'student');
+                  //sp.setString('userType', 'student');
+                  sp.setString('userType', 'teacher');
                   sp.setBool('isLogin', true);
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomePage()));
+                  if(sp.getString('userType') == 'teacher'){
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => StudentPage()));
+
+                  }else if(sp.getString('userType') == 'student'){
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => StudentPage()));
+                  }else {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => StudentPage()));
+                  }
+
                   },
                 child: Container(
                   height: 50,
