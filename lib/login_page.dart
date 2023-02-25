@@ -22,7 +22,8 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               InkWell(
                 onTap: (){
-                  print('tab');
+                  sabujAtik();
+
                 },
                 child: Container(
                   height: 50,
@@ -37,5 +38,10 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
     );
+  }
+
+  Future<void> sabujAtik() async {
+    await Future.delayed(Duration(seconds: 3));
+    print('delayed');
   }
 }
