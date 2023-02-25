@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sp_multirolebase/home_page.dart';
 import 'package:sp_multirolebase/login_page.dart';
 
@@ -17,11 +18,27 @@ class _SplashScreenState extends State<SplashScreen> {
     // TODO: implement initState
     super.initState();
     print('Program Asche');
-    Timer(Duration(seconds: 3), () {
-      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => LoginPage())
-      );
-    });
+
+    isLogin();
+  }
+
+  void isLogin()async{
+    SharedPreferences sp = await SharedPreferences.getInstance();
+    bool isLogin = sp.getBool('isLogin') ?? false;
+
+    if(isLogin){
+      Timer(Duration(seconds: 3), () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => HomePage())
+        );
+      });
+    }else {
+      Timer(Duration(seconds: 3), () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => LoginPage())
+        );
+      });
+    }
   }
   @override
   Widget build(BuildContext context) {

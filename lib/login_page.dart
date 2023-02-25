@@ -65,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                   width: double.infinity,
                   color: Colors.green,
                   child: Center(
-                    child: Text('Click'),
+                    child: Text('Log In'),
                   ),
                 ),
               )
