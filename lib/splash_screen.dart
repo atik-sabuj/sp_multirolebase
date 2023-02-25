@@ -4,7 +4,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sp_multirolebase/home_page.dart';
 import 'package:sp_multirolebase/login_page.dart';
 import 'package:sp_multirolebase/teacher_page.dart';
-
 import 'student_page.dart';
 
 class SplashScreen extends StatefulWidget {
