@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -21,10 +22,17 @@ class _LoginPageState extends State<LoginPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               InkWell(
-                onTap: (){
-                  sabujAtik();
+                onTap: ()async{
+                  SharedPreferences sp = await SharedPreferences.getInstance();
+                  sp.setString('name', 'atik sabuj');
+                  sp.setInt('age', 25);
+                  sp.setBool('isLogin', false);
 
-                },
+                  print(sp.getString('name'));
+                  print(sp.getInt('age').toString());
+                  print(sp.getBool('isLogin').toString());
+
+                  },
                 child: Container(
                   height: 50,
                   width: double.infinity,
@@ -38,10 +46,5 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
     );
-  }
-
-  Future<void> sabujAtik() async {
-    await Future.delayed(Duration(seconds: 3));
-    print('delayed');
   }
 }
