@@ -15,8 +15,10 @@ class _HomePageState extends State<HomePage> {
         title: Text('Home Page'),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-
+          Text('Home Screen')
         ],
       ),
     );
