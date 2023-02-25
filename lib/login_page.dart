@@ -56,6 +56,9 @@ class _LoginPageState extends State<LoginPage> {
                   SharedPreferences sp = await SharedPreferences.getInstance();
                   sp.setString('email', emailController.text.toString());
                   sp.setString('age', ageController.text.toString());
+
+                  //admin, student, teacher
+                  sp.setString('userType', 'student');
                   sp.setBool('isLogin', true);
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => HomePage()));
